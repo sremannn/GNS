@@ -1,25 +1,188 @@
-.body {
-    background-color: black;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+:root {
+  --ff: "Montserrat", sans-serif;
+  --h1: bold 2rem/1.2em var(--ff);
+  --h2: bold 1.5/1.5em var(--ff);
+  --h3: bold 1.2rem/1.5em var(--ff);
+  --links: bold 1rem/1em var(--ff);
+  --p: 1rem/1.8em var(--ff);
+  --subtext: .75rem/1.8em var(--ff);
+  --transition: .2s ease-in-out;
+}
+:root {
+  --gray10: hsl(0, 0%, 10%);
+  --gray30: hsl(0, 0%, 30%);
+  --gray60: hsl(0, 0%, 60%);
+  --gray90: hsl(0, 0%, 90%);
+  --accent: hsl(222, 76%, 62%);
+  --accent-dark: hsl(52, 100%, 61%);
+}
+/* System mode (uses system preference) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --gray10: hsl(0, 0%, 90%);
+    --gray30: hsl(0, 0%, 60%);
+    --gray60: hsl(0, 0%, 30%);
+    --gray90: hsl(0, 0%, 10%);
+    --accent: hsl(52, 100%, 61%);
+    --accent40: hsl(52, 100%, 40%);
+    --accent-dark: hsl(222, 76%, 62%);
+  }
+}
+/* Light mode (default) */
+html.light-mode {
+  --gray10: hsl(0, 0%, 10%);
+  --gray30: hsl(0, 0%, 30%);
+  --gray60: hsl(0, 0%, 60%);
+  --gray90: hsl(0, 0%, 90%);
+  --accent: hsl(222, 76%, 62%);
+  --accent-dark: hsl(52, 100%, 61%);
 }
 
-.h1 {
-    text-align: center;
-    font-size: 40px;
+/* Dark mode */
+html.dark-mode {
+  --gray10: hsl(0, 0%, 90%);
+  --gray30: hsl(0, 0%, 60%);
+  --gray60: hsl(0, 0%, 30%);
+  --gray90: hsl(0, 0%, 10%);
+  --accent: hsl(52, 100%, 61%);
+  --accent40: hsl(52, 100%, 40%);
+  --accent-dark: hsl(222, 76%, 62%);
 }
 
-.P {
-    color: white;
-    text-align: center;
-    font-size: 16px;
-    font-weight: 100;
-    font-style: normal;
+
+
+/* Global CSS */
+
+h1,
+h2,
+h3,
+.subtext {
+  margin: 0px;
+  padding: 0px;
 }
 
+p {
+  margin: 10px 0px;
+  padding: 0px;
+}
+
+ul {
+  margin: 10px;
+}
+
+h1 {
+  font: var(--h1);
+}
+
+h2 {
+  font: var(--h2);
+}
+
+h3 {
+  font: var(--h3);
+}
+
+p,
+ul,
+ol {
+  font: var(--p);
+}
+
+.subtext {
+  font: var(--subtext);
+}
+body {
+  width: 90%;
+  max-width: 540px;
+  margin: 0 auto;
+  background-color: var(--gray90);
+  color: var(--gray10);
+}
+
+/* links & buttons */
 a {
-	color: rgb(36, 96, 250);
-	font-size: 18px;
-	font-weight: 100;
-	font-style: normal;
-	font-family: sans-serif;
-	text-decoration: none;
+  text-decoration: none;
+  color: var(--gray10);
+  font: var(--links);
+}
+
+.btns {
+  display: flex;
+  flex-direction: column;
+  margin: 40px 0px;
+}
+.btn{
+  text-align: center;
+  border: solid 1px var(--gray60);
+  padding: 40px;
+  border-radius: 8px;
+}
+.btn:hover{
+  color: var(--accent);
+  border: solid 1px var(--gray30);
+}
+
+/* header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.gns {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 20px 0px;
+}
+
+header img {
+  fill: var(--accent);
+  width: 44px;
+  border-radius: 50px;
+  margin-right: 4px;
+}
+
+/* dark mode */
+#mode{
+  cursor: pointer;
+  user-select: none;
+}
+
+#mode svg{
+  fill: var(--gray10);
+  width: 20px;
+}
+
+
+/* Footer */
+
+footer {
+  padding: 10vh 0px 20vh 0px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Copyright a {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 100;
+}
+
+.socials-svg {
+  fill: var(--gray60);
+  width: 40px;
+  transition: var(--transition);
+  text-align: center;
+  align-items: center;
+}
+
+.socials-svg:hover {
+  fill: var(--gray10);
+  scale: 1.1;
 }
